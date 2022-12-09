@@ -4,6 +4,8 @@ import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectItems } from 'redux/contacts/selectors';
+import { Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export const ContactForm = () => {
   let elementId = nanoid();
@@ -24,11 +26,11 @@ export const ContactForm = () => {
   };
 
   return (
-    <form htmlFor={elementId} onSubmit={handleSubmit}>
-      <label className={styles.label}>
-        Name
-        <input
-          id={elementId}
+    <Form className="border rounded p-4" onSubmit={handleSubmit}>
+      <p className={styles.paragraph}>Enter Contact</p>
+      <Form.Group className="mb-3" controlId={elementId}>
+        <Form.Label>Name</Form.Label>
+        <Form.Control
           className={styles.input}
           type="text"
           name="name"
@@ -36,11 +38,10 @@ export const ContactForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-      </label>
-      <label className={styles.label}>
-        Number
-        <input
-          id={elementId}
+      </Form.Group>
+      <Form.Group className="mb-3" controlId={elementId}>
+        <Form.Label>Number</Form.Label>
+        <Form.Control
           className={styles.input}
           type="tel"
           name="number"
@@ -48,11 +49,8 @@ export const ContactForm = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-      </label>
-
-      <button className={styles.button} type="submit">
-        Add Contact
-      </button>
-    </form>
+      </Form.Group>
+      <Button type="submit">Add Contact</Button>
+    </Form>
   );
 };
