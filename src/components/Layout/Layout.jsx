@@ -10,7 +10,7 @@ const Layout = () => {
       <Container>
         <Navbar className="px-3 py-3" bg="light">
           <LinkContainer to="/">
-            <Button variant="secondary">Home</Button>
+            <Navbar.Brand className="fs-2">Phonebook</Navbar.Brand>
           </LinkContainer>
           <Navbar.Collapse className="justify-content-end">
             <LinkContainer className="me-2" to="register">
