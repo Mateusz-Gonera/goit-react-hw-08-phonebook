@@ -12,7 +12,7 @@ const ContactsPage = () => {
 
   return (
     <Stack
-      className="justify-content-center mt-4"
+      className="justify-content-center align-items-start mt-4"
       direction="horizontal"
       gap={5}
     >
