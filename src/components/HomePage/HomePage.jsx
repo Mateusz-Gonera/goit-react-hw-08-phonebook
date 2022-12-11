@@ -6,7 +6,6 @@ export const HomePage = () => {
     <Container className={styles.container}>
       <h1 className="text-center">
         Welcome to Phonebook Application &#128214;
-        <p>Please Log in</p>
       </h1>
     </Container>
   );
