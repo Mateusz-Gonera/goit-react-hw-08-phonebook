@@ -1,7 +1,7 @@
-import styles from './Filter.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { handleFilter } from 'redux/contacts/contactsSlice';
+import { Form } from 'react-bootstrap';
 
 export const Filter = () => {
   const [filter, setFilter] = useState('');
@@ -17,15 +17,16 @@ export const Filter = () => {
   };
 
   return (
-    <label className={styles.label}>
-      Find contacts by Name
-      <input
-        className={styles.input}
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={handleChange}
-      />
-    </label>
+    <Form className="mb-1">
+      <Form.Group>
+        <Form.Label>Find contacts by Name</Form.Label>
+        <Form.Control
+          type="text"
+          name="filter"
+          value={filter}
+          onChange={handleChange}
+        />
+      </Form.Group>
+    </Form>
   );
 };

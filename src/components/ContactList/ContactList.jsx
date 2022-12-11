@@ -7,7 +7,7 @@ export const ContactList = () => {
   const visibleItems = useSelector(selectVisibleItems);
 
   return (
-    <ul className={styles.list}>
+    <ul className="list-unstyled py-4">
       {visibleItems.map(contact => (
         <li key={contact.id} className={styles.item}>
           <Contact contact={contact} />

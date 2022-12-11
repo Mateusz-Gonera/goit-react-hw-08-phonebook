@@ -2,6 +2,7 @@ import styles from './Contact.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
+import { Button } from 'react-bootstrap';
 
 export const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -10,12 +11,17 @@ export const Contact = ({ contact }) => {
 
   return (
     <>
-      <span className={styles.paragraph}>
+      <span className="me-2">
         {contact.name}: {contact.phone}
       </span>
-      <button type="button" className={styles.btn} onClick={handleDelete}>
+      <Button
+        type="button"
+        className={styles.btn}
+        variant="outline-primary"
+        onClick={handleDelete}
+      >
         Delete
-      </button>
+      </Button>
     </>
   );
 };

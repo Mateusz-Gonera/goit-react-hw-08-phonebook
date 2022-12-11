@@ -11,20 +11,22 @@ const ContactsPage = () => {
   const error = useSelector(selectError);
 
   return (
-    <Stack
-      className="justify-content-center align-items-start mt-4"
-      direction="horizontal"
-      gap={5}
-    >
-      <div>
-        <ContactForm />
-      </div>
-      <div>
-        <h2>Contacts</h2>
-        <Filter />
-        {isLoading && !error ? <Loader /> : <ContactList />}
-      </div>
-    </Stack>
+    <>
+      <h1 className="text-center my-1">Contacts</h1>
+      <Stack
+        className="justify-content-center align-items-start mt-4"
+        direction="horizontal"
+        gap={5}
+      >
+        <div>
+          <ContactForm />
+        </div>
+        <div>
+          <Filter />
+          {isLoading && !error ? <Loader /> : <ContactList />}
+        </div>
+      </Stack>
+    </>
   );
 };
 

@@ -1,4 +1,8 @@
 .loader {
   display: flex;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: auto;
+  color: rgb(0, 112, 50);
 }
