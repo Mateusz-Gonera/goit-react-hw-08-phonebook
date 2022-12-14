@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/operations';
+import { refreshUser } from 'redux/auth/operations';
 import Layout from './Layout/Layout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
@@ -13,7 +13,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (
