@@ -1,12 +1,30 @@
 import styles from './LoginForm.module.css';
 import { nanoid } from 'nanoid';
 import { Form, Button, Container } from 'react-bootstrap';
+import { logIn } from 'redux/auth/operations';
+import { useDispatch } from 'react-redux';
 
 export const LoginForm = () => {
   const elementId = nanoid(5);
+  const dispatch = useDispatch();
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    const form = evt.currentTarget;
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+    dispatch(
+      logIn({
+        email,
+        password,
+      })
+    );
+    form.reset();
+  };
+
   return (
     <Container className={styles.container}>
-      <Form className="border rounded p-4">
+      <Form className="border rounded p-4" onSubmit={handleSubmit}>
         <p className={styles.paragraph}>Please login</p>
         <Form.Group className="mb-3" controlId={elementId}>
           <Form.Label>E-mail</Form.Label>
