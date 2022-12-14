@@ -64,7 +64,7 @@ export const RegisterForm = () => {
             required
           />
         </Form.Group>
-        <Button type="submit">Submit Register</Button>
+        <Button type="submit">Submit</Button>
       </Form>
     </Container>
   );

@@ -25,7 +25,7 @@ export const LoginForm = () => {
   return (
     <Container className={styles.container}>
       <Form className="border rounded p-4" onSubmit={handleSubmit}>
-        <p className={styles.paragraph}>Please login</p>
+        <p className={styles.paragraph}>Please log in</p>
         <Form.Group className="mb-3" controlId={elementId}>
           <Form.Label>E-mail</Form.Label>
           <Form.Control
@@ -47,7 +47,7 @@ export const LoginForm = () => {
             required
           />
         </Form.Group>
-        <Button type="submit">Login</Button>
+        <Button type="submit">Log in</Button>
       </Form>
     </Container>
   );
