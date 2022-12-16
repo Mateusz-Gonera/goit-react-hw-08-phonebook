@@ -17,6 +17,8 @@ const popover = (
 export const UserMenu = () => {
   const { user } = useAuth();
 
+  if (!user) return;
+
   return (
     <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
       <Button variant="secondary">Welcome '{user.name}'</Button>

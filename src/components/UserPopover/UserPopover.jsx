@@ -11,7 +11,7 @@ export const UserPopover = () => {
 
   return (
     <>
-      <p>Email: {user.email}</p>
+      <p className="mb-2">Email: {user.email}</p>
       <Button type="button" onClick={handleLogOut}>
         Logout
       </Button>
