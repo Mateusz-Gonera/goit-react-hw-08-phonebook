@@ -12,7 +12,7 @@ export const Contact = ({ contact }) => {
   return (
     <>
       <span className="me-2">
-        {contact.name}: {contact.phone}
+        {contact.name}: {contact.number}
       </span>
       <Button
         type="button"
