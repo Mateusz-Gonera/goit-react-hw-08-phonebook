@@ -1,13 +1,11 @@
 import styles from './RegisterForm.module.css';
 import { nanoid } from 'nanoid';
 import { Form, Button, Container } from 'react-bootstrap';
-import { useAuth } from 'hooks/useAuth';
 import { register } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
 
 export const RegisterForm = () => {
   const elementId = nanoid(5);
-  const { user } = useAuth();
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
@@ -16,9 +14,6 @@ export const RegisterForm = () => {
     const name = form.elements.name.value;
     const email = form.elements.email.value;
     const password = form.elements.password.value;
-    if (user.name === name) {
-      return alert(`${name} is already in base`);
-    }
     dispatch(
       register({
         name,
