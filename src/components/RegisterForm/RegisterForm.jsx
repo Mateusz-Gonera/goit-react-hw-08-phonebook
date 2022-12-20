@@ -1,11 +1,9 @@
 import styles from './RegisterForm.module.css';
-import { nanoid } from 'nanoid';
 import { Form, Button, Container } from 'react-bootstrap';
 import { register } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
 
 export const RegisterForm = () => {
-  const elementId = nanoid(5);
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
@@ -28,7 +26,7 @@ export const RegisterForm = () => {
     <Container className={styles.container}>
       <Form className="border rounded p-4" onSubmit={handleSubmit}>
         <p className={styles.paragraph}>Register account</p>
-        <Form.Group className="mb-3" controlId={elementId}>
+        <Form.Group className="mb-3" controlId="inputName">
           <Form.Label>Username</Form.Label>
           <Form.Control
             className={styles.input}
@@ -38,7 +36,7 @@ export const RegisterForm = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId={elementId}>
+        <Form.Group className="mb-3" controlId="inputEmail">
           <Form.Label>E-mail</Form.Label>
           <Form.Control
             className={styles.input}
@@ -48,7 +46,7 @@ export const RegisterForm = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId={elementId}>
+        <Form.Group className="mb-3" controlId="inputPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
             className={styles.input}

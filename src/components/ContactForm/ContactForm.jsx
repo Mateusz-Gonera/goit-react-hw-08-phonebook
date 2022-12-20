@@ -1,6 +1,5 @@
 import styles from './ContactForm.module.css';
 import React from 'react';
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectItems } from 'redux/contacts/selectors';
@@ -8,7 +7,6 @@ import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 export const ContactForm = () => {
-  let elementId = nanoid();
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
 
@@ -28,7 +26,7 @@ export const ContactForm = () => {
   return (
     <Form className="border rounded p-4" onSubmit={handleSubmit}>
       <p className={styles.paragraph}>Enter Contact</p>
-      <Form.Group className="mb-3" controlId={elementId}>
+      <Form.Group className="mb-3" controlId="inputName">
         <Form.Label>Name</Form.Label>
         <Form.Control
           className={styles.input}
@@ -39,7 +37,7 @@ export const ContactForm = () => {
           required
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId={elementId}>
+      <Form.Group className="mb-3" controlId="inputNumber">
         <Form.Label>Number</Form.Label>
         <Form.Control
           className={styles.input}
